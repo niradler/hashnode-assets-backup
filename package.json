@@ -1,0 +1,24 @@
+{
+  "name": "hashnode-assets-backup",
+  "version": "1.0.0",
+  "description": "hashnode assets backup",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niradler/hashnode-assets-backup.git"
+  },
+  "keywords": [],
+  "author": "Nir Adler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niradler/hashnode-assets-backup/issues"
+  },
+  "homepage": "https://github.com/niradler/hashnode-assets-backup#readme",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1"
+  }
+}

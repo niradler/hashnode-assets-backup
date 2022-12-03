@@ -1,0 +1,26 @@
+name: "Assets Backup GitHub Action"
+author: "Nir Adler"
+description: "Hashnode backup posts to GitHub but assets is linked to cdn.hashnode.com, this action will download the assets and add them to the repo"
+
+inputs:
+  output_path:
+    description: "output folder"
+    default: "assets"
+    required: false
+  github_token:
+    description: >
+      Personal access token (PAT) used to fetch the repository. The PAT is configured
+      with the local git config, which enables your scripts to run authenticated git
+      commands. The post-job step removes the PAT.
+      We recommend using a service account with the least permissions necessary.
+      Also when generating a new PAT, select the least scopes necessary.
+    required: false
+    default: ${{ github.token }}
+
+branding:
+  icon: "anchor"
+  color: "blue"
+
+runs:
+  using: "node16"
+  main: "index.js"
