@@ -1,0 +1,15 @@
+on:
+  push:
+    paths:
+      - "**.md"
+
+jobs:
+  backup_hashnode:
+    runs-on: ubuntu-latest
+    name: Backup images from Hashnode md files
+    steps:
+      - name: backup
+        id: backup
+        uses: niradler/hashnode-backup-action@v1.1
+
+
