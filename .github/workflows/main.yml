@@ -16,7 +16,7 @@ jobs:
       - name: Changed files
         run: |
           echo "CHANGED_FILES=${{ steps.changed-files.outputs.all_changed_files }}" >> $GITHUB_ENV
-      - name: backup
+      - name: Backup Hashnode
         id: backup
         uses: niradler/hashnode-assets-backup@v0.1
         with:

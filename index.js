@@ -39,10 +39,12 @@ try {
     files.forEach((filePath) => {
       try {
         console.log(`found ${filePath}`);
-        const file = fs.readFileSync(filePath, "utf-8");
-        const urls = [...file.match(/https{0,1}:\/\/(cdn)\S*/g)];
-
-        downloads(urls);
+        if(Array.isArray(files) && files.some(file=>filePath.includes(file))){
+            const file = fs.readFileSync(filePath, "utf-8");
+            const urls = [...file.match(/https{0,1}:\/\/(cdn)\S*/g)];
+    
+            downloads(urls);
+        }        
       } catch (error) {
         console.log(error.message);
       }
