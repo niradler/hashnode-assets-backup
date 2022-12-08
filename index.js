@@ -12,7 +12,7 @@ const downloads = (urls) => {
   outputPath = core.getInput("output_path") || outputPath;
   console.log(`Output folder: ${outputPath}!`);
   [...new Set(urls)].forEach((url) => {
-    const fullPath = path.join(process.cwd(),outputPath,Url.parse(url).path);
+    const fullPath = path.join(process.cwd(), outputPath, Url.parse(url).path);
 
     fs.mkdirSync(path.dirname(fullPath), { recursive: true });
     console.log("folder created");
@@ -29,8 +29,13 @@ const downloads = (urls) => {
 
 try {
   console.log(`searching for files`);
-
-  glob("**.md", function (er, files) {
+  const pattern = core.getInput("pattern") || "**.md";
+  console.log("files-", core.getInput("files"));
+  const files = core.getInput("files")
+    ? core.getInput("files").split(" ")
+    : false;
+  console.log("files+", files);
+  glob(pattern, function (er, files) {
     files.forEach((filePath) => {
       try {
         console.log(`found ${filePath}`);

@@ -6,6 +6,11 @@ inputs:
   output_path:
     description: "output folder"
     default: "assets"
+  pattern:
+    description: "files pattern"
+    default: "**.md"
+  files:
+    description: "files to crawl"
   github_token:
     description: >
       Personal access token (PAT) used to fetch the repository. The PAT is configured
