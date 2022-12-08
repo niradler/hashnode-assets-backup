@@ -14,5 +14,4 @@ with:
   output_path: "assets"
 ```
 
-demo:
-https://cdn.hashnode.com/res/hashnode/image/upload/v1642373663456/EqIC61EXU.png
+![Demo](https://cdn.hashnode.com/res/hashnode/image/upload/v1642373588890/GV9w3XVCL.png align="left")
