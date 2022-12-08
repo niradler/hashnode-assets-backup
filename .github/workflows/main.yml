@@ -10,6 +10,6 @@ jobs:
     steps:
       - name: backup
         id: backup
-        uses: niradler/hashnode-assets-backup@v1.1
+        uses: niradler/actions/hashnode-assets-backup@v0.1
 
 
