@@ -2,11 +2,45 @@
 
 Hashnode backup posts to GitHub but assets are linked to cdn.hashnode.com, this action will download the assets and add them to the repo
 
-## Inputs
-
-### `output_path`
 
 ## Example usage
+
+### Create first backup use
+
+```yaml
+on: 
+  workflow_dispatch:
+    inputs:
+      output_path:
+        description: "output folder"
+        default: "assets"
+      pattern:
+        description: "files pattern"
+        default: "**.md"        
+
+jobs:
+  backup_hashnode:
+    runs-on: ubuntu-latest
+    name: Backup images from Hashnode md files
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Backup Hashnode
+        id: backup
+        uses: niradler/hashnode-assets-backup@v0.1
+        with:
+          output_path: ${{ github.event.inputs.output_path }}
+          pattern: ${{ github.event.inputs.pattern }}
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: 'assets'
+          author_name: Backup Bot
+          author_email: backup@bot.com
+          message: 'Commit assets by workflow'
+
+```
+
+### After first backup use
 
 ```yaml
 on:
