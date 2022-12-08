@@ -30,13 +30,11 @@ const downloads = (urls) => {
 try {
   console.log(`searching for files`);
   const pattern = core.getInput("pattern") || "**.md";
-  console.log("files-", core.getInput("files"));
   const files = core.getInput("files")
     ? core.getInput("files").split(" ")
     : false;
-  console.log("files+", files);
-  glob(pattern, function (er, files) {
-    files.forEach((filePath) => {
+  glob(pattern, function (er, localFiles) {
+    localFiles.forEach((filePath) => {
       try {
         console.log(`found ${filePath}`);
         if(Array.isArray(files) && files.some(file=>filePath.includes(file))){
