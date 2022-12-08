@@ -28,5 +28,5 @@ jobs:
           add: 'assets'
           author_name: Backup Bot
           author_email: backup@bot.com
-          message: 'Your commit message'
+          message: 'Commit files'
 
