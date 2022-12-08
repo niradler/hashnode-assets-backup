@@ -13,3 +13,5 @@ uses: actions/hashnode-assets-backup@v0.1
 with:
   output_path: "assets"
 ```
+
+https://miro.medium.com/max/1400/0*rZecOAy_WVr16810
