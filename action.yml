@@ -1,6 +1,6 @@
 name: "Assets Backup GitHub Action"
 author: "Nir Adler"
-description: "Hashnode backup posts to GitHub but assets is linked to cdn.hashnode.com, this action will download the assets and add them to the repo"
+description: "Backup Hashnode posts assets from cdn.hashnode.com"
 
 inputs:
   output_path:
