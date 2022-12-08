@@ -5,7 +5,7 @@ Hashnode backup posts to GitHub but assets are linked to cdn.hashnode.com, this 
 
 ## Example usage
 
-### Create first backup use
+### Create your first backup
 
 ```yaml
 on: 
@@ -40,7 +40,7 @@ jobs:
 
 ```
 
-### After first backup use
+### Continues backup
 
 ```yaml
 on:
