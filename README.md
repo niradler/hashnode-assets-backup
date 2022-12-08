@@ -78,3 +78,10 @@ jobs:
 ```
 
 ![Demo](https://cdn.hashnode.com/res/hashnode/image/upload/v1642373588890/GV9w3XVCL.png align="left")
+
+![Demo](/assets/res/hashnode/image/upload/v1642373588890/GV9w3XVCL.png?raw=true align="left")
+
+[Demo](/niradler/hashnode-assets-backup/assets/res/hashnode/image/upload/v1642373588890/GV9w3XVCL.png?raw=true align="left")
+
+![Demo](https://github.com/niradler/hashnode-assets-backup/blob/main/assets/res/hashnode/image/upload/v1642373588890/GV9w3XVCL.png?raw=true align="left")
+
