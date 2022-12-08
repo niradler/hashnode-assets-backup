@@ -10,12 +10,12 @@ let outputPath = "assets";
 
 const downloads = (urls) => {
   outputPath = core.getInput("output_path") || outputPath;
-  console.log(`Output folder: ${outputPath}!`);
+  console.log(`Output folder: ${outputPath}`);
   [...new Set(urls)].forEach((url) => {
     const fullPath = path.join(process.cwd(), outputPath, Url.parse(url).path);
-
-    fs.mkdirSync(path.dirname(fullPath), { recursive: true });
-    console.log("folder created");
+    const folderPath = path.dirname(fullPath);
+    fs.mkdirSync(folderPath, { recursive: true });
+    console.log(folderPath, "folder created");
     const temp = fs.createWriteStream(fullPath);
     https.get(url, function (response) {
       response.pipe(temp);
@@ -37,12 +37,15 @@ try {
     localFiles.forEach((filePath) => {
       try {
         console.log(`found ${filePath}`);
-        if(Array.isArray(files) && files.some(file=>filePath.includes(file))){
-            const file = fs.readFileSync(filePath, "utf-8");
-            const urls = [...file.match(/https{0,1}:\/\/(cdn)\S*/g)];
-    
-            downloads(urls);
-        }        
+        if (
+          Array.isArray(files) &&
+          files.some((file) => filePath.includes(file))
+        ) {
+          const file = fs.readFileSync(filePath, "utf-8");
+          const urls = [...file.match(/https{0,1}:\/\/(cdn)\S*/g)];
+
+          downloads(urls);
+        }
       } catch (error) {
         console.log(error.message);
       }
