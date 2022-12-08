@@ -37,15 +37,18 @@ try {
     localFiles.forEach((filePath) => {
       try {
         console.log(`found ${filePath}`);
-        if (
-          Array.isArray(files) &&
-          files.some((file) => filePath.includes(file))
+        const isFiles = Array.isArray(files);
+       
+        if (isFiles
+           &&
+          !files.find((file) => filePath.includes(file))
         ) {
-          const file = fs.readFileSync(filePath, "utf-8");
-          const urls = [...file.match(/https{0,1}:\/\/(cdn)\S*/g)];
-
-          downloads(urls);
+        return;
         }
+        const file = fs.readFileSync(filePath, "utf-8");
+        const urls = [...file.match(/https{0,1}:\/\/(cdn)\S*/g)];
+
+        downloads(urls);
       } catch (error) {
         console.log(error.message);
       }
