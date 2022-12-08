@@ -12,7 +12,7 @@ const downloads = (urls) => {
   outputPath = core.getInput("output_path") || outputPath;
   console.log(`Output folder: ${outputPath}!`);
   [...new Set(urls)].forEach((url) => {
-    const fullPath = `./${outputPath}${Url.parse(url).path}`;
+    const fullPath = path.join(process.cwd(),outputPath,Url.parse(url).path);
 
     fs.mkdirSync(path.dirname(fullPath), { recursive: true });
     console.log("folder created");
@@ -28,8 +28,7 @@ const downloads = (urls) => {
 };
 
 try {
-  const payload = JSON.stringify(github.context.payload, undefined, 2);
-  console.log(`The event payload: ${payload}`);
+  console.log(`searching for files`);
 
   glob("**.md", function (er, files) {
     files.forEach((filePath) => {

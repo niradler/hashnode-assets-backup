@@ -8,8 +8,17 @@ jobs:
     runs-on: ubuntu-latest
     name: Backup images from Hashnode md files
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3    
       - name: backup
         id: backup
         uses: niradler/hashnode-assets-backup@v0.1
-
+        with:
+          output_path: 'assets'        
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: 'assets'
+          author_name: Backup Bot
+          author_email: backup@bot.com
+          message: 'Your commit message'
 
