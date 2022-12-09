@@ -9,6 +9,9 @@ inputs:
   posts_output_path:
     description: "posts folder"
     default: "posts"
+  copy_failed_posts:
+    description: "copy posts to the posts folder even if the backup failed"
+    default: 'true'
   pattern:
     description: "files pattern"
     default: "**.md"
