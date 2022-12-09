@@ -77,4 +77,15 @@ jobs:
 
 ```
 
-![Demo](https://cdn.hashnode.com/res/hashnode/image/upload/v1642373588890/GV9w3XVCL.png align="left")
+**to use the backup assets, replce the original link**
+
+```md
+![Demo](https://cdn.hashnode.com/res/hashnode/image/upload/v1642373588890/GV9w3XVCL.png)
+```
+
+**to use the backup path**
+
+```md
+![Demo](/assets/res/hashnode/image/upload/v1642373588890/GV9w3XVCL.png?raw=true)
+```
+
