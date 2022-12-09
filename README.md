@@ -77,10 +77,10 @@ jobs:
 
 ```
 
-**to use the backup assets, replce the original link**
+**to use the backup assets, replace the original link**
 
 ```md
-![Demo](https://cdn.hashnode.com/res/hashnode/image/upload/v1642373588890/GV9w3XVCL.png)
+![Demo](https://cdn.hashnode.com/res/hashnode/image/upload/v1642373588890/GV9w3XVCL.png align="left")
 ```
 
 **to use the backup path**
