@@ -32,7 +32,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Backup Hashnode
         id: backup
-        uses: niradler/hashnode-assets-backup@v0.1
+        uses: niradler/hashnode-assets-backup@v0.2
         with:
           output_path: ${{ github.event.inputs.output_path }}
           posts_output_path: ${{ github.event.inputs.posts_output_path }}
@@ -68,7 +68,7 @@ jobs:
           echo "CHANGED_FILES=${{ steps.changed-files.outputs.all_changed_files }}" >> $GITHUB_ENV
       - name: Backup Hashnode
         id: backup
-        uses: niradler/hashnode-assets-backup@v0.1
+        uses: niradler/hashnode-assets-backup@v0.2
         with:
           output_path: 'assets'
           pattern: '**.md'
