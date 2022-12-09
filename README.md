@@ -6,6 +6,8 @@ all arguments are optional.
 
 ## Example usage
 
+![Demo](/hashnode_backup_action.gif?raw=true)
+
 ### Create your first backup
 
 ```yaml
@@ -85,11 +87,11 @@ jobs:
 **to use the backup assets, replace the original link**
 
 ```md
-![Demo](https://cdn.hashnode.com/res/hashnode/image/upload/v1642373588890/GV9w3XVCL.png align="left")
+![Demo link](https://cdn.hashnode.com/res/hashnode/image/upload/v1642373588890/GV9w3XVCL.png align="left")
 ```
 
 **to use the backup path**
 
 ```md
-![Demo](/assets/res/hashnode/image/upload/v1642373588890/GV9w3XVCL.png?raw=true)
+![Demo link](/assets/res/hashnode/image/upload/v1642373588890/GV9w3XVCL.png?raw=true)
 ```
