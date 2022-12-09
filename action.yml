@@ -6,6 +6,9 @@ inputs:
   output_path:
     description: "output folder"
     default: "assets"
+  posts_output_path:
+    description: "posts folder"
+    default: "posts"
   pattern:
     description: "files pattern"
     default: "**.md"

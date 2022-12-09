@@ -6,7 +6,11 @@ on:
         default: "assets"
       pattern:
         description: "files pattern"
-        default: "**.md"        
+        default: "**.md"
+      posts_output_path:
+        description: "posts folder"
+        default: "posts"        
+           
 
 jobs:
   backup_hashnode:
@@ -20,7 +24,8 @@ jobs:
         uses: niradler/hashnode-assets-backup@v0.1
         with:
           output_path: ${{ github.event.inputs.output_path }}
-          pattern: ${{ github.event.inputs.pattern }}
+          posts_output_path: ${{ github.event.inputs.posts_output_path }}
+          pattern: ${{ github.event.inputs.pattern }}          
       - uses: EndBug/add-and-commit@v9
         with:
           add: 'assets'

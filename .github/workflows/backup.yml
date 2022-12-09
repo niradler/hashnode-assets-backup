@@ -23,6 +23,7 @@ jobs:
           output_path: 'assets'
           pattern: '**.md'
           files: ${{ env.CHANGED_FILES }}
+          posts_output_path: 'posts'
       - uses: EndBug/add-and-commit@v9
         with:
           add: 'assets'
