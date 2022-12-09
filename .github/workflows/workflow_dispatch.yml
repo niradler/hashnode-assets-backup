@@ -32,4 +32,3 @@ jobs:
           author_name: Backup Bot
           author_email: backup@bot.com
           message: 'Commit assets by workflow'
-

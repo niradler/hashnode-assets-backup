@@ -1,7 +1,8 @@
 # hashnode-assets-backup
 
-Hashnode backup posts to GitHub but assets are linked to cdn.hashnode.com, this action will download the assets and add them to the repo
+Hashnode backup posts to GitHub but assets are linked to cdn.hashnode.com, this action will download the assets and add them to the repository.
 
+all arguments are optional.
 
 ## Example usage
 
@@ -16,7 +17,11 @@ on:
         default: "assets"
       pattern:
         description: "files pattern"
-        default: "**.md"        
+        default: "**.md"
+      posts_output_path:
+        description: "posts folder"
+        default: "posts"        
+           
 
 jobs:
   backup_hashnode:
@@ -30,14 +35,14 @@ jobs:
         uses: niradler/hashnode-assets-backup@v0.1
         with:
           output_path: ${{ github.event.inputs.output_path }}
-          pattern: ${{ github.event.inputs.pattern }}
+          posts_output_path: ${{ github.event.inputs.posts_output_path }}
+          pattern: ${{ github.event.inputs.pattern }}          
       - uses: EndBug/add-and-commit@v9
         with:
           add: 'assets'
           author_name: Backup Bot
           author_email: backup@bot.com
           message: 'Commit assets by workflow'
-
 ```
 
 ### Continues backup
@@ -68,13 +73,13 @@ jobs:
           output_path: 'assets'
           pattern: '**.md'
           files: ${{ env.CHANGED_FILES }}
+          posts_output_path: 'posts'
       - uses: EndBug/add-and-commit@v9
         with:
           add: 'assets'
           author_name: Backup Bot
           author_email: backup@bot.com
           message: 'Commit files'
-
 ```
 
 **to use the backup assets, replace the original link**
