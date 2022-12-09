@@ -50,7 +50,7 @@ const getFilesByPattern = async (pattern) => {
 try {
   const pattern = core.getInput('pattern') || '**.md';
   outputPath = core.getInput('assets_output_path') || outputPath;
-  const postsOutputPath = core.getInput('posts_output_path') || 'posts';
+  const postsOutputPath = core.getInput('posts_output_path') || '';
   const copyFailed = !(core.getInput('copy_failed_posts') === 'false');
   const files = core.getInput('files')
     ? core.getInput('files').split(' ')
